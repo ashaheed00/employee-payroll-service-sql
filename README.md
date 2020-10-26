@@ -70,3 +70,9 @@ SELECT COUNT(id) FROM employee_payroll;
 ```
 SELECT COUNT(id) FROM employee_payroll WHERE gender = 'M';
 ```
+## UC8_Add_PhNo_Address_Dept
+```
+ALTER TABLE employee_payroll ADD phone_number VARCHAR(10) AFTER name;
+ALTER TABLE employee_payroll ADD address VARCHAR(200) AFTER name;
+ALTER TABLE employee_payroll ADD department VARCHAR(20) NOT NULL AFTER phone_number;
+```
