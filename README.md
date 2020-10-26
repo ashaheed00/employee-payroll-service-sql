@@ -83,3 +83,11 @@ ALTER TABLE employee_payroll ADD tax DOUBLE NOT NULL AFTER basic_pay;
 ALTER TABLE employee_payroll ADD taxable_pay DOUBLE NOT NULL AFTER basic_pay;
 ALTER TABLE employee_payroll ADD deductions DOUBLE NOT NULL AFTER basic_pay;
 ```
+## UC10_ERDiagram
+```
+INSERT INTO employee_payroll(name,department,gender,basic_pay,deductions,taxable_pay,tax,net_pay,start_date) VALUES
+('Terisa','Sales','F',3000000,0,0,0,0,'2019-11-13'),
+('Terisa','Marketing','F',3000000,1000000,2000000,500000,1500000,'2019-11-13');
+```
+#### ER Diagram
+![Screenshot](emp_er_diagram.png)
