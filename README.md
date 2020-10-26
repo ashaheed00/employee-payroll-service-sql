@@ -36,3 +36,12 @@ SELECT name FROM employee_payroll
    WHERE start_date BETWEEN
    CAST('2018-01-01' AS DATE) AND DATE(NOW());
 ```
+## UC6_AbilityToAddGender
+```
+ALTER TABLE employee_payroll ADD gender CHAR(1) AFTER name;
+
+UPDATE employee_payroll set gender ='M'
+   where name = 'Vishal' or name = 'John';
+UPDATE employee_payroll set gender ='F'
+   where name = 'Asifa';
+```
