@@ -26,9 +26,13 @@ INSERT INTO employee_payroll (name, salary, start_date) VALUES
 ```SELECT * FROM employee_payroll;```
 ## UC5_RetrieveSpecificData
 #### Retrieve salary using name
-```SELECT salary FROM employee_payroll 
-   WHERE name = 'John';```
+```
+SELECT salary FROM employee_payroll 
+   WHERE name = 'John';
+```
 #### Retrieve employee name using start date
-```SELECT name FROM employee_payroll
+```
+SELECT name FROM employee_payroll
    WHERE start_date BETWEEN
-   CAST('2018-01-01' AS DATE) AND DATE(NOW());```
+   CAST('2018-01-01' AS DATE) AND DATE(NOW());
+```
