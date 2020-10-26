@@ -164,3 +164,17 @@ INSERT INTO company (company_id, company_name) VALUES
 ```UPDATE employee SET company_id=501;```
 #### Assign company_id as the foreign key from company table
 ```ALTER TABLE employee ADD FOREIGN KEY (company_id) REFERENCES company(company_id);```
+## UC12_Testing_WithVariousRetrieves
+#### Chceking UC4 again
+```SELECT * FROM employee E, payroll P, department D WHERE E.emp_id = P.emp_id AND P.emp_id=D.emp_id;```
+#### Chceking UC5 again
+```SELECT * FROM payroll WHERE emp_id = (SELECT emp_id FROM employee WHERE name='Asifa');```
+```
+SELECT name FROM employee
+   WHERE start_date BETWEEN
+   CAST('2018-01-01' AS DATE) AND DATE(NOW());
+```
+#### Chceking UC7 again
+```SELECT SUM(basic_pay) FROM payroll WHERE emp_id IN (SELECT emp_id FROM employee WHERE gender='M');```
+```SELECT AVG(basic_pay) FROM payroll WHERE emp_id IN (SELECT emp_id FROM employee WHERE gender='F');```
+```SELECT gender, COUNT(emp_id) FROM employee GROUP BY gender;```
