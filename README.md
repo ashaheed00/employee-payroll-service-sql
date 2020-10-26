@@ -91,3 +91,76 @@ INSERT INTO employee_payroll(name,department,gender,basic_pay,deductions,taxable
 ```
 #### ER Diagram
 ![Screenshot](emp_er_diagram.png)
+## UC11_Implement_ERDiagram
+#### Create employee table and insert data
+```
+CREATE TABLE employee (
+   emp_id INT unsigned NOT NULL,
+   name VARCHAR(50) NOT NULL,
+   address VARCHAR(200),
+   phone_number VARCHAR(10),
+   gender CHAR(1),
+   start_date DATE NOT NULL,
+   PRIMARY KEY (emp_id)
+);
+```
+```
+INSERT INTO employee (emp_id,name,gender,start_date) VALUES
+   (1001,'Vishal','M','2018-02-06'),
+   (1002,'Asifa','F','2019-10-10'),
+   (1003,'John','M','2016-10-12'),
+   (1004,'Terisa','F','2018-11-13');
+```
+#### Create department table and insert data
+```  
+CREATE TABLE department (
+   emp_id INT unsigned NOT NULL,
+   dept_name VARCHAR(20) NOT NULL,
+   FOREIGN KEY (emp_id) REFERENCES employee(emp_id) 
+);
+```
+```
+INSERT INTO department (emp_id,dept_name) VALUES
+   (1001,'Consultancy'),
+   (1002,'Finance'),
+   (1003,'Consultancy'),
+   (1004,'Sales'),
+   (1004,'Marketing');
+```
+#### Create payroll table and insert data
+```
+CREATE TABLE payroll (
+   emp_id INT unsigned NOT NULL,
+   basic_pay DOUBLE NOT NULL,
+   deductions DOUBLE NOT NULL,
+   taxable_pay DOUBLE NOT NULL,
+   tax DOUBLE NOT NULL,
+   net_pay DOUBLE NOT NULL,
+   PRIMARY KEY (emp_id),
+   FOREIGN KEY (emp_id) REFERENCES employee(emp_id) 
+);
+```
+```
+INSERT INTO payroll (emp_id,basic_pay,deductions,taxable_pay,tax,net_pay) VALUES
+   (1001,900000,200000,700000,70000,630000),
+   (1002,800000,200000,600000,60000,540000),
+   (1003,900000,200000,700000,70000,630000),
+   (1004,1200000,300000,900000,100000,800000);
+```
+#### Create company table and insert data
+```
+CREATE TABLE company (
+   company_id INT unsigned NOT NULL,
+   company_name VARCHAR(30) NOT NULL,
+   PRIMARY KEY (company_id)
+);
+```
+```
+INSERT INTO company (company_id, company_name) VALUES
+   (501,'BridgeLabz'),
+   (502,'Capgemini');
+```
+#### Add company_id to the employee table
+```UPDATE employee SET company_id=501;```
+#### Assign company_id as the foreign key from company table
+```ALTER TABLE employee ADD FOREIGN KEY (company_id) REFERENCES company(company_id);```
