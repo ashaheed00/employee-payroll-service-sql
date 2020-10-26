@@ -45,3 +45,20 @@ UPDATE employee_payroll set gender ='M'
 UPDATE employee_payroll set gender ='F'
    where name = 'Asifa';
 ```
+## UC7_Find_Sum_Avg_Count
+#### Total salary of all the female employees
+```
+SELECT SUM(salary) FROM employee_payroll
+WHERE gender = 'F' GROUP BY gender;
+```
+#### Average salary of male employees
+```
+SELECT AVG(salary) FROM employee_payroll
+WHERE gender = 'M' GROUP BY gender;
+```
+#### Max and Min salary
+```SELECT MIN(salary) FROM employee_payroll;```
+```SELECT MAX(salary) FROM employee_payroll;```
+#### Count of employee numbers and based on their genders
+```SELECT COUNT(id) FROM employee_payroll;```
+```SELECT COUNT(id) FROM employee_payroll WHERE gender = 'M';```
