@@ -57,8 +57,10 @@ SELECT AVG(salary) FROM employee_payroll
 WHERE gender = 'M' GROUP BY gender;
 ```
 #### Max and Min salary
-```SELECT MIN(salary) FROM employee_payroll;```
+```SELECT MIN(salary) FROM employee_payroll;
+```
 ```SELECT MAX(salary) FROM employee_payroll;```
 #### Count of employee numbers and based on their genders
-```SELECT COUNT(id) FROM employee_payroll;```
+```SELECT COUNT(id) FROM employee_payroll;
+```
 ```SELECT COUNT(id) FROM employee_payroll WHERE gender = 'M';```
