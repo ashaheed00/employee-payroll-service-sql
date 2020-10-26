@@ -22,3 +22,5 @@ INSERT INTO employee_payroll (name, salary, start_date) VALUES
    ('John', 2500000.00, '2016-10-12'),
    ('Asifa', 1800000.00, '2019-10-10');
 ```
+## UC4_RetrieveAllData
+```SELECT * FROM employee_payroll;```
