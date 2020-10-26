@@ -175,6 +175,12 @@ SELECT name FROM employee
    CAST('2018-01-01' AS DATE) AND DATE(NOW());
 ```
 #### Chceking UC7 again
-```SELECT SUM(basic_pay) FROM payroll WHERE emp_id IN (SELECT emp_id FROM employee WHERE gender='M');```
-```SELECT AVG(basic_pay) FROM payroll WHERE emp_id IN (SELECT emp_id FROM employee WHERE gender='F');```
-```SELECT gender, COUNT(emp_id) FROM employee GROUP BY gender;```
+```
+SELECT SUM(basic_pay) FROM payroll WHERE emp_id IN (SELECT emp_id FROM employee WHERE gender='M');
+```
+```
+SELECT AVG(basic_pay) FROM payroll WHERE emp_id IN (SELECT emp_id FROM employee WHERE gender='F');
+```
+```
+SELECT gender, COUNT(emp_id) FROM employee GROUP BY gender;
+```
